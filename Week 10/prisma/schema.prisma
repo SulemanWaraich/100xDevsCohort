@@ -13,3 +13,20 @@ datasource db {
   provider = "postgresql"
   url      = "postgresql://Suleman_owner:5TFqZ6VtSdPG@ep-flat-tooth-a5n7ocn7-pooler.us-east-2.aws.neon.tech/Suleman?sslmode=require"
 }
+
+
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  firsName String?
+  lastName String?
+  password String
+}
+
+model Todo {
+  id Int @id @default(autoincrement())
+  title String 
+  description String?
+  done Boolean @default(false)
+  userId Int
+}
